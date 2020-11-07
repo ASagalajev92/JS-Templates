@@ -13,10 +13,16 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-//-----    Connect to our mongo dbs using mongoose package   -----//
-mongoose.connect('mongodb+srv://account:password@cluster0.mzo7m.mongodb.net/todolistDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+// //-----    MongoDB cluster connection   -----//
+// mongoose.connect('mongodb+srv://account:password@cluster-link/dbName', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
+
+//-----    MongoDB connection using localhost   -----//
+mongoose.connect('mongodb://localhost:27017/dbName', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 
